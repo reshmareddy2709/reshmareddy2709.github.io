@@ -16,7 +16,16 @@
 </head>
 
 <body>
+   <button id="toggleBtn">Toggle Text</button>
+<p id="toggleText" style="display: none;">Hello, world!</p>
 
+<script>
+$(document).ready(function(){
+    $("#toggleBtn").click(function(){
+        $("#toggleText").toggle();
+    });
+});
+</script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="#">Reshma Reddy Vallakonda</a>
@@ -41,16 +50,6 @@
                         <a class="nav-link" href="#certifications">Certifications</a>
                     </li>
                 </ul>
-                <button id="toggleBtn">Toggle Text</button>
-<p id="toggleText" style="display: none;">Hello, world!</p>
-
-<script>
-$(document).ready(function(){
-    $("#toggleBtn").click(function(){
-        $("#toggleText").toggle();
-    });
-});
-</script>
             </div>
         </div>
     </nav>
