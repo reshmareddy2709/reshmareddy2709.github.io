@@ -50,6 +50,25 @@
                         <h2 class="text-center">Reshma Reddy Vallakonda</h2>
                         <img src="headshot.jpeg" alt="Your Headshot" class="img-fluid rounded-circle mb-3" width="50" height="50">
                         <p id="email" onclick="showhideEmail()">Show my email</p>
+                        <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:vallakry" +
+                    "@" +
+                    "ucmail.uc.edu'>vallakry" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
+    </script>
                         <p class="text-center">Email: vallakry.mail.uc.edu| LinkedIn: <a href="https://www.linkedin.com/in/reshma-reddy-vallakonda-68ba051a9" target="_blank" class="text-white">linkedin.com/in/reshma-reddy-vallakonda</a> | Phone: (513) 658-8739</p>
                     </div>
                     <div class="card-body">
@@ -95,25 +114,7 @@
         src="https://s11.flagcounter.com/count2/szVl/bg_FFFFFF/txt_000000/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
         alt="Flag Counter" border="0"></a>
                              <a href="https://reshmareddy2709.github.io/Project1/waph.html">Click here to view waph.html</a>
-                             <script>
-        var shown = false;
-
-        function showhideEmail() {
-            if (shown) {
-                document.getElementById("email").innerHTML = "Show my email";
-                shown = false;
-            } else {
-                var myemail =
-                    "<a href='mailto:vallakry" +
-                    "@" +
-                    "ucmail.uc.edu'>vallakry" +
-                    "@" +
-                    "ucmail.uc.edu</a>";
-                document.getElementById("email").innerHTML = myemail;
-                shown = true;
-            }
-        }
-    </script>
+                             
 </div>
                     </div>
                 </div>
