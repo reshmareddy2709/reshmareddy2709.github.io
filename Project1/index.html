@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>jQuery Toggle Example</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
     <style>
         
     </style>
@@ -86,6 +88,21 @@
             }
         }
     </script>
+                    <script>
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      // Check if "firstVisit" key exists in localStorage
+      if (!localStorage.getItem("firstVisit")) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the "firstVisit" key in localStorage to remember the visit
+        localStorage.setItem("firstVisit", true);
+      }
+    }
+
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
                      <button id="toggleBtn">Toggle Text</button>
 <p id="toggleText" style="display: none;">Hello, world!</p>
 
