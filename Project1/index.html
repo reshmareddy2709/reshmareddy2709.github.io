@@ -52,6 +52,20 @@
                         <img src="headshot.jpeg" alt="Your Headshot" class="img-fluid rounded-circle mb-3" width="50" height="50">
                         <p class="text-center">Email: vallakry.mail.uc.edu| LinkedIn: <a href="https://www.linkedin.com/in/reshma-reddy-vallakonda-68ba051a9" target="_blank" class="text-white">linkedin.com/in/reshma-reddy-vallakonda</a> | Phone: (513) 658-8739</p>
                     </div>
+                    <div id="response"></div>
+    <script>
+        $(document).ready(function () {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                console.log("From jokeAPI: " + JSON.stringify(result));
+                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+            });
+        });
+
+        function encodeInput(input) {
+            // You can add your own encoding logic here if needed
+            return input;
+        }
+    </script>
                     <p id="email" onclick="showhideEmail()">Show my email</p>
                         <script>
         var shown = false;
@@ -70,20 +84,6 @@
                 document.getElementById("email").innerHTML = myemail;
                 shown = true;
             }
-        }
-    </script>
-                    <div id="response"></div>
-    <script>
-        $(document).ready(function () {
-            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
-                console.log("From jokeAPI: " + JSON.stringify(result));
-                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
-            });
-        });
-
-        function encodeInput(input) {
-            // You can add your own encoding logic here if needed
-            return input;
         }
     </script>
                      <button id="toggleBtn">Toggle Text</button>
