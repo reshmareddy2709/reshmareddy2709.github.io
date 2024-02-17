@@ -6,15 +6,15 @@
 
 **Email**: vallakry@mail.uc.edu
 
-**Short-bio**:   
+*Short-bio*: Reshma Reddy Vallakonda is a UC Student who is interested in Front-end Web Development. 
 
-![Divya Sheelam](images/headshot.jpeg)
+![headshot](headshot.jpeg)
 
 ## Repository Information
 
-Respository's URL: [git@github.com:sheelada/waph-sheelada.git](git@github.com:sheelada/waph-sheelada.git)
+Respository's URL: git@github.com:reshmareddy2709/waph-vallakry.git
 
-This is a private repository for Divya Sheelam to store all code from the course. The organization of this repository is as follows.
+This is a private repository for Reshma to store all code from the course.
 
 # Individual Project 1 – Front-end Web Development with a Professional Profile Website on github.io cloud service
 
