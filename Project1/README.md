@@ -22,30 +22,31 @@ This is a private repository for Reshma to store all code from the course.
 
 For my first individual project, I created a professional profile website and hosted it on GitHub Pages. This website serves as a display for my resume, skills, and experiences. Additionally, it includes various technical features such as integrating a joke API, digital and analog clocks, displaying my email ID, weather API, and a flag counter. The main objectives of this project were to improve my skills in front-end web development and gain hands-on experience in deploying websites using GitHub Pages.
 
-You can access my website through this link: https://sheelada.github.io/index.html.
+You can access my website through this link: [https://reshmareddy2709.github.io/Project1/index.html](https://reshmareddy2709.github.io/Project1/index.html)
 
-To explore the Individual Project-1 repository, you can visit: https://github.com/sheelada/sheelada.github.io.
+To explore the Individual Project-1 repository, you can visit:[https://github.com/reshmareddy2709/reshmareddy2709.github.io](https://github.com/reshmareddy2709/reshmareddy2709.github.io)
 ## General Requirements
 
 ### Personal Website on Github.io
 
 I made a new public repository called sheelada.github.io and built a personal website on GitHub Pages. The website includes sections for my resume, contact details, education, experiences, projects, certifications, and skills.
 
-Here's the link to check out my website: https://sheelada.github.io/index.html.
+Here's the link to check out my website: [https://reshmareddy2709.github.io/Project1/index.html](https://reshmareddy2709.github.io/Project1/index.html)
 
-screenshot of my portfolio website here: 
+
+![Portfolio Website](img1.png)
+![Portfolio Website](img2.png)
+![Portfolio Website](img3.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
 I added a separate page named waph.html to my repository, providing information about the "Web Application Programming and Hacking" course along with details about associated hands-on projects like Lab0, Lab1, Lab2, Hackathon 1, and Individual Project 1.
 
-You can view the dedicated page here: https://sheelada.github.io/waph.html.
+You can view the dedicated page here: [https://reshma2709.github.io/Project1/waph.html](https://reshma2709.github.io/Project1/waph.html).
 
-Additionally, I included a link to this page on my personal website, as shown in the screenshot below:
+![](img4.png)
+![waph.html page](img5.png)
 
-
-
-And here's a snapshot of the waph.html page itself: waph.html page
 
 
 ## Non-technical requirements
