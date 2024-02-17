@@ -12,7 +12,7 @@
 
 ## Repository Information
 
-Respository's URL: git@github.com:reshmareddy2709/waph-vallakry.git
+Respository's URL: [git@github.com:reshmareddy2709/waph-vallakry.git](git@github.com:reshmareddy2709/waph-vallakry.git)
 
 This is a private repository for Reshma to store all code from the course.
 
@@ -20,49 +20,45 @@ This is a private repository for Reshma to store all code from the course.
 
 ## Overview and Requirements 
 
-For the Individual Project 1, I developed a professional profile website and deployed it on GitHub Pages. The website serves as a showcase of my resume, skills, and experiences, while also incorporating various technical functionalities like integrating joke API, digital clock, analog clock, show my email id, weather API and Flag counter. The main objectives of this project were to enhance my front-end web development skills and gain practical experience in deploying websites using GitHub Pages.
+For my first individual project, I created a professional profile website and hosted it on GitHub Pages. This website serves as a display for my resume, skills, and experiences. Additionally, it includes various technical features such as integrating a joke API, digital and analog clocks, displaying my email ID, weather API, and a flag counter. The main objectives of this project were to improve my skills in front-end web development and gain hands-on experience in deploying websites using GitHub Pages.
 
-The link to access my website is: [https://sheelada.github.io/index.html](https://sheelada.github.io/index.html).
+You can access my website through this link: https://sheelada.github.io/index.html.
 
-The link to access Individual Project-1 is: [https://github.com/sheelada/sheelada.github.io](https://github.com/sheelada/sheelada.github.io).
-
+To explore the Individual Project-1 repository, you can visit: https://github.com/sheelada/sheelada.github.io.
 ## General Requirements
 
 ### Personal Website on Github.io
 
-I created a new public repository with the name `sheelada.github.io`. Created a personal website on GitHub Pages featuring my resume, contact information, education, experiences, projects, certifications and skills.
+I made a new public repository called sheelada.github.io and built a personal website on GitHub Pages. The website includes sections for my resume, contact details, education, experiences, projects, certifications, and skills.
 
-The link to access my website is: [https://sheelada.github.io/index.html](https://sheelada.github.io/index.html).
+Here's the link to check out my website: https://sheelada.github.io/index.html.
 
-![Portfolio Website](images/screenshot1.png)
+screenshot of my portfolio website here: 
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
-I created the separate page with the name waph.html on my repository introducing the "Web Application Programming and Hacking" course and its related hands-on projects. In this I includes overviews of Lab0, Lab1, Lab2, Hackathon 1 and Individual Project 1. 
+I added a separate page named waph.html to my repository, providing information about the "Web Application Programming and Hacking" course along with details about associated hands-on projects like Lab0, Lab1, Lab2, Hackathon 1, and Individual Project 1.
 
-The link to access waph.html is: [https://sheelada.github.io/waph.html](https://sheelada.github.io/waph.html).
+You can view the dedicated page here: https://sheelada.github.io/waph.html.
 
-This page link is accessible from the personal website as shown in below screenshot:
+Additionally, I included a link to this page on my personal website, as shown in the screenshot below:
 
-![waph.html page link on website](images/screenshot2.png)
 
-![waph.html page](images/screenshot3.png)
+
+And here's a snapshot of the waph.html page itself: waph.html page
+
 
 ## Non-technical requirements
 
 ### Bootstrap Template
 
-I have downloaded a bootstrap template from the website `https://bootstrapmade.com/` 
-
-I changed the template as per my requirements and tasks given by the professor
+I downloaded a Bootstrap template from https://bootstrapmade.com/ and customized it according to my needs and the tasks assigned by my professor.
 
 ### Page Tracker
 
-I Integrated Flag Counter as a page tracker to monitor website visits and engagement. 
+I incorporated a Flag Counter as a page tracker to monitor visits and engagement on my website. I chose https://flagcounter.com/ for this purpose. To implement it, I generated a key from the website and integrated it into my code. You can see the Flag Counter visibly displayed on my website homepage.
 
-From the two given websites. I have chosen `https://flagcounter.com/`. I generated a key from the website and integrated it in my code. Flag counter is visible in my website homepage as integrated.
-
-Code for integrating Flag Counter:
+Here is the code I used to integrate the Flag Counter:
 
 ```html
 <div style="text-align:left;">
@@ -80,8 +76,9 @@ Code for integrating Flag Counter:
 
 ### A digital clock; An analog clock; show/hide your email:
 
-Same as lab 2, Implemented a digital clock and an analog clock using JavaScript to display current time and also added functionality to show/hide the email address based on user interaction.
+Similar to Lab 2, I implemented a digital clock and an analog clock on my website using JavaScript to showcase the current time. Additionally, I added functionality to dynamically show or hide the email address based on user interaction.
 
+The JavaScript code for the clocks and email address functionality is as follows:
 Source Code for digital clock:
 ```JS
 function displayTime() {
@@ -120,14 +117,12 @@ function showhideEmail() {
         shown = true;
 ```
 
-Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
-
 ![Digital clock, Analog Clock, Show/hide your email](images/screenshot5.png)
 
 
 ### One more Functionality of my choice
 
-I have integrated Hacker News Api using `VUE.JS` Framework. This Api displays 5 HACKER NEWS TRENDING ARTICLES. 
+I successfully incorporated the Hacker News API into my website using the Vue.js framework. This integration enables the display of the top 5 trending articles from Hacker News.
 
 Source code for Haacker news Api:
 ```JS
@@ -168,29 +163,30 @@ methods: {
 
 ### Joke API
 
-Integrated the jokeAPI to fetch a new joke every minute and display it on the website.
+I've effectively incorporated the jokeAPI into my website, allowing it to retrieve a fresh joke every minute and dynamically present it on the page.
 
 Source code for Joke API:
 
 ```JS
-function fetchJoke() {
-          $.get("https://v2.jokeapi.dev/joke/Any?type=single", function (result) {
-            console.log("From jokeAPI: " + JSON.stringify(result));
-            if (result && result.joke) {
-              $("#joke").text("Here's a joke for you: " + result.joke);
-            } else {
-              $("#joke").text("Could not retrieve a joke at the moment.");
-            }
-          });
-        }
+<div id="response"></div>
+    <script>
+        $(document).ready(function () {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                console.log("From jokeAPI: " + JSON.stringify(result));
+                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+            });
+        });
 
-fetchJoke();
-setInterval(fetchJoke, 60000);
+        function encodeInput(input) {
+            // You can add your own encoding logic here if needed
+            return input;
+        }
+    </script>
 ```
 
 ### Weather API
 
-Integrated the Weatherbit API to fetch current weather information for Cincinnati and display it on the website.
+I've successfully integrated the Weatherbit API into my website, enabling it to retrieve and display current weather information for Cincinnati.
 
 ```JS
 
@@ -217,7 +213,7 @@ $.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69ba
 
 ### Javascript Cookies
 
-Implemented JavaScript cookies to remember the client's visit and display personalized messages based on whether they are a first-time visitor or returning user. For first time visit it shows "Welcome to my homepage!", for returning user it displays "Welcome back! Your last visit was (last visit time and date)".
+I have implemented JavaScript cookies on my website to remember the client's visit. Now, it displays personalized messages based on whether the user is a first-time visitor or a returning user. For first-time visitors, the message is "Welcome to my homepage!", and for returning users, it shows "Welcome back! Your last visit was (last visit time and date)".
 
 ```JS
 // Function to set or retrieve the value of a cookie
