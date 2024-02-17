@@ -44,10 +44,9 @@ I added a separate page named waph.html to my repository, providing information 
 
 You can view the dedicated page here: [https://reshma2709.github.io/Project1/waph.html](https://reshma2709.github.io/Project1/waph.html).
 
-![link in index](img4.png)
 ![waph.html page](img5.png)
 
-
+![link in index](img4.png)
 
 ## Non-technical requirements
 
