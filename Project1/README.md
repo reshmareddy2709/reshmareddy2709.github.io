@@ -69,7 +69,7 @@ Here is the code I used to integrate the Flag Counter:
 </div>
 ```
 
-![Flag Counter](images/screenshot4.png)
+![Flag Counter](img8.png)
 
 
 
@@ -82,43 +82,68 @@ Similar to Lab 2, I implemented a digital clock and an analog clock on my websit
 The JavaScript code for the clocks and email address functionality is as follows:
 Source Code for digital clock:
 ```JS
-function displayTime() {
-          document.getElementById('digital-clock').innerHTML = "current time:" + new Date();
-        }
-        setInterval(displayTime, 500);
+<div id="digit-clock"></div>
+    <script>
+    function displayTime() {
+        document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+    }
+    setInterval(displayTime, 500);
+    </script>
 ```
 
 Source Code for Analog clock:
 ```JS
-var canvas = document.getElementById("analog-clock");
-        var ctx = canvas.getContext("2d");
-        var radius = canvas.height / 2;
-        ctx.translate(radius, radius);
-        radius = radius * 0.90
-        setInterval(drawClock, 1000);
+</div>
+    <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+    <script>
+        var canvas = document.getElementById("analog-clock");
 
+        var ctx = canvas.getContext("2d");
+
+        var radius = canvas.height / 2;
+
+        ctx.translate(radius, radius);
+        radius = radius * 0.9;
+
+        setInterval(drawClock, 1000);
         function drawClock() {
-          drawFace(ctx, radius);
-          drawNumbers(ctx, radius);
-          drawTime(ctx, radius);
+            drawFace(ctx, radius);
+
+            drawNumbers(ctx, radius);
+
+            drawTime(ctx, radius);
         }
+            </script>
 ```
+![Digital clock, Analog Clock](img9.png)
 
 Source Code for show/hide your email:
 
 ```JS
-function showhideEmail() {
-      if (shown) {
-        document.getElementById('email').innerHTML = "Click here to show my email";
-        shown = false;
-      }
-      else {
-        var myemail = "<a href='mailto:sheelada" + "@" + "mail.uc.edu'>sheelada" + "@" + "mail.uc.edu</a>";
-        document.getElementById('email').innerHTML = myemail;
-        shown = true;
+<p id="email" onclick="showhideEmail()">Show my email</p>
+     <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu'>devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
+    </script>
 ```
 
-![Digital clock, Analog Clock, Show/hide your email](images/screenshot5.png)
+![show/hide email](img11.png)
 
 
 ### One more Functionality of my choice
@@ -127,7 +152,15 @@ I successfully incorporated the Hacker News API into my website using the Vue.js
 
 Source code for Haacker news Api:
 ```JS
+<button id="toggleBtn">Toggle Text</button>
+<p id="toggleText" style="display: none;">Hello, world!</p>
 
+<script>
+$(document).ready(function(){
+    $("#toggleBtn").click(function(){
+        $("#toggleText").toggle();
+    });
+});
  ```
 ![toggle text](img10.png)
 
