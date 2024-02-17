@@ -2,11 +2,11 @@
 
 ## Instructor: Dr. Phu Phung
 
-**Name**: Divya Sheelam
+**Name**: Reshma Reddy Vallakonda
 
-**Email**: sheelada@mail.uc.edu
+**Email**: vallakry@mail.uc.edu
 
-**Short-bio**: Divya pursuing masters in Information Technology at University of Cincinnati. Divya is interested in software development and machine learning.  
+**Short-bio**:   
 
 ![Divya Sheelam](images/headshot.jpeg)
 
