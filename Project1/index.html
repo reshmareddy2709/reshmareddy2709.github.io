@@ -88,6 +88,24 @@
             }
         }
     </script>
+                    <div>
+                    <p id="weather"></p>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        const apiKey = '11fbca99f02d4878b8becfa72cd1f7ad';
+                        const targetCity = 'Cincinnati';
+                        const targetCountry = 'US';
+                        const weatherUrl = `https://api.weatherbit.io/v2.0/current?&key=${apiKey}&city=${targetCity}&country=${targetCountry}`;
+
+                        $.get(weatherUrl, function (response) {
+                            const currentTemp = response.data[0].temp;
+                            const condition = response.data[0].weather.description;
+                            const displayInfo = `Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition}`;
+                            $('#weather').html(displayInfo);
+                        });
+                    });
+                </script>
                     <script>
     // Function to check if it's the first-time visit
     function checkFirstVisit() {
