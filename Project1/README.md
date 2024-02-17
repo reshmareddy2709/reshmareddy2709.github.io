@@ -127,40 +127,9 @@ I successfully incorporated the Hacker News API into my website using the Vue.js
 
 Source code for Haacker news Api:
 ```JS
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-```
- ```JS
-new Vue({
-el: '#app',
-data: {
-  articles: []
-},
-mounted() {
-  this.fetchArticles();
-},
-methods: {
-  fetchArticles() {
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-      .then(response => response.json())
-      .then(ids => {
-        // Take only the first 10 article IDs
-        ids = ids.slice(0, 5);
-        // Fetch details of each article
-        Promise.all(ids.map(id =>
-          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-            .then(response => response.json())
-        ))
-          .then(articles => {
-            // Update articles data
-            this.articles = articles;
-          });
-      })
-      .catch(error => console.error('Error fetching articles:', error));
-  }
-}
-});
+
  ```
-![5 Hacker news trending articles](images/screenshot6.png)
+![5 Hacker news trending articles](img10.png)
 
 ### Joke API
 
@@ -184,6 +153,7 @@ Source code for Joke API:
         }
     </script>
 ```
+![Joke API](img11.png)
 
 ### Weather API
 
@@ -191,74 +161,95 @@ I've successfully integrated the Weatherbit API into my website, enabling it to 
 
 ```JS
 
-$(document).ready(function () {
-// Fetch data from Weatherbit API
-$.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69bae245f081687c17710408a2", function (data) {
-  // Extract relevant weather information
-  var temperature = data.data[0].temp;
-  var description = data.data[0].weather.description;
-  var iconCode = data.data[0].weather.icon;
+<div>
+                    <p id="weather"></p>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        const apiKey = 'c1d2b08a2c144aaea279ebd103d352f5';
+                        const targetCity = 'Cincinnati';
+                        const targetCountry = 'US';
+                        const weatherUrl = `https://api.weatherbit.io/v2.0/current?&key=${apiKey}&city=${targetCity}&country=${targetCountry}`;
 
-  // Update weather information
-  $("#weather-info").text("Current Temperature: " + temperature + "°C, Weather: " + description);
-
-  //update weather icon
-  $("#weather-icon").attr("src", "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png");
-  $("#weather-icon").attr("alt", description);
-});
-});
-
+                        $.get(weatherUrl, function (response) {
+                            const currentTemp = response.data[0].temp;
+                            const condition = response.data[0].weather.description;
+                            const displayInfo = `Current temperature and weather condition in ${targetCity}: ${currentTemp}°C, ${condition}`;
+                            $('#weather').html(displayInfo);
+                        });
+                    });
+                </script>
 ```
 
-![Joke API and weather API](images/screenshot7.png)
+![weather API](img12.png)
 
 ### Javascript Cookies
 
 I have implemented JavaScript cookies on my website to remember the client's visit. Now, it displays personalized messages based on whether the user is a first-time visitor or a returning user. For first-time visitors, the message is "Welcome to my homepage!", and for returning users, it shows "Welcome back! Your last visit was (last visit time and date)".
 
 ```JS
-// Function to set or retrieve the value of a cookie
-function setCookie(name, value, days) {
-var expires = "";
-if (days) {
-  var date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  expires = "; expires=" + date.toUTCString();
-}
-document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
+<!DOCTYPE html>
+<html lang="en">
 
-function getCookie(name) {
-var nameEQ = name + "=";
-var ca = document.cookie.split(';');
-for (var i = 0; i < ca.length; i++) {
-  var c = ca[i];
-  while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-  if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-}
-return null;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+</head>
 
-// Function to display the welcome message
-function displayWelcomeMessage() {
-var lastVisit = getCookie("lastVisit");
-if (!lastVisit) {
-  // First-time visit
-  setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
-  alert("Welcome to my homepage!");
-} else {
-  // Returning visit
-  var lastVisitDate = new Date(lastVisit);
-  alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
-}
-}
+<body>
 
-// Call the function when the page loads
-window.onload = displayWelcomeMessage;
+  <script>
+    // Function to set a cookie with a specified name, value, and expiration days
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
 
+    // Function to get the value of a cookie by name
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      var isFirstVisit = getCookie("firstVisit");
+      if (!isFirstVisit) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the cookie to remember the visit for 365 days
+        setCookie("firstVisit", "true", 365);
+      } else {
+        // Display welcome back message for returning visitors
+        var lastVisit = getCookie("lastVisit");
+        alert("Welcome back! Your last visit was " + lastVisit);
+      }
+      // Set the cookie for the current visit
+      setCookie("lastVisit", new Date(), 365);
+    }
+
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
+
+</body>
+
+</html>
 ```
-![Fisrt visit](images/screenshot8.png)
-![revisit cookies](images/screenshot9.png)
+![Fisrt visit](img13.png)
+![revisit cookies](img14.png)
 
 
 
