@@ -214,23 +214,13 @@ I've successfully integrated the Weatherbit API into my website, enabling it to 
                 </script>
 ```
 
-![weather API](img12.png)
+![weather API](img14.png)
 
 ### Javascript Cookies
 
 I have implemented JavaScript cookies on my website to remember the client's visit. Now, it displays personalized messages based on whether the user is a first-time visitor or a returning user. For first-time visitors, the message is "Welcome to my homepage!", and for returning users, it shows "Welcome back! Your last visit was (last visit time and date)".
 
 ```JS
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Page</title>
-</head>
-
-<body>
 
   <script>
     // Function to set a cookie with a specified name, value, and expiration days
@@ -277,12 +267,9 @@ I have implemented JavaScript cookies on my website to remember the client's vis
     checkFirstVisit();
   </script>
 
-</body>
-
-</html>
 ```
-![Fisrt visit](img13.png)
-![revisit cookies](img14.png)
+![First visit](img12.png)
+![revisit cookies](img13.png)
 
 
 
