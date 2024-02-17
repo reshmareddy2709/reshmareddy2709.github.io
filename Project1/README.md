@@ -129,7 +129,7 @@ Source code for Haacker news Api:
 ```JS
 
  ```
-![5 Hacker news trending articles](img10.png)
+![toggle text](img10.png)
 
 ### Joke API
 
